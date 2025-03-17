@@ -45,10 +45,7 @@
     <h2>Detalhes do Produto</h2>
     <input type="text" id="input-id" placeholder="ID" readonly />
     <input type="text" id="input-produto" placeholder="Produto" readonly />
-    <input type="text" id="input-quantidade" placeholder="Quantidade" readonly />
-    <input type="text" id="input-preco" placeholder="preco" readonly />
     <input type="text" id="input-preco-unitario" placeholder="Preço Unitário" readonly />
-    <input type="text" id="input-preco-total" placeholder="Preço Total" readonly />
 
     <audio id="beep-sound" src="beep.mp3" preload="auto"></audio>
 
@@ -60,10 +57,7 @@
 
         const inputId = document.getElementById("input-id");
         const inputProduto = document.getElementById("input-produto");
-        const inputQuantidade = document.getElementById("input-quantidade");
-        const inputPreco = document.getElementById("input-preco");
         const inputPrecoUnitario = document.getElementById("input-preco-unitario");
-        const inputPrecoTotal = document.getElementById("input-preco-total");
 
         inputBarcode.addEventListener("keydown", function (event) {
             if (event.key === "Enter") {
@@ -92,15 +86,12 @@
                     } else {
                         inputId.value = data.id;
                         inputProduto.value = data.produto;
-                        inputQuantidade.value = data.quantidade;
-                        inputPreco.value = data.preco;
                         inputPrecoUnitario.value = data.preco_unitario;
-                        inputPrecoTotal.value = data.preco_total;
                     }
                 })
                 .catch(error => console.error("Erro na requisição:", error));
 
-                inputQuantidade.focus();
+                inputPrecoUnitario.focus();
             }
         }
 
