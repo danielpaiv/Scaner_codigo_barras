@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leitor de Código de Barras</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/quagga/0.12.1/quagga.min.js"></script>
+    <img src="icones/graficos.ico" width="46" height="46">
+
     <style>
         body {
+            background-color: #f1f1f1;
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
@@ -28,10 +30,22 @@
             display: none;
             margin-top: 20px;
         }
+        button {
+            background-color: #f1f1f1;
+            border: none;
+            color: red;
+            padding: 0px 0px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
-
+<button onclick="window.location.href='teste.php'"><img src="icones/graficos.ico" width="46" height="46" title="relatorio"></button>
     <h1>Leitor de Código de Barras</h1>
     <p>Escaneie um código de barras ou digite manualmente:</p>
 
@@ -92,6 +106,9 @@
                 .catch(error => console.error("Erro na requisição:", error));
 
                 inputPrecoUnitario.focus();
+
+                // Limpa o campo após a leitura
+                inputBarcode.value = "";
             }
         }
 
